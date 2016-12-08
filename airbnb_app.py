@@ -11,7 +11,7 @@ from sklearn.preprocessing import LabelEncoder
 
 le = LabelEncoder()
 
-data = pd.read_csv('/Users/amishdalal/airbnb_hackathon/airbnb_model.csv',index_col=0)
+data = pd.read_csv('/Users/amishdalal/airbnb_hackathon/airbnb_pricing_model_2016.csv',index_col=0)
 X1 = data.iloc[:,:5]
 y1 = data['avg_price']
 
@@ -62,10 +62,28 @@ def result():
       neighborhood = inputs['neighborhood'][0]
       #print neighborhood
 
+      month = int(month)
+      bedrooms = int(bedrooms)
+      neighborhood = int(neighborhood)
+
       item = np.array([month, bedrooms, number_of_reviews, review_scores_rating, neighborhood])
       score = PREDICTOR.predict(item)
       price = round(score,2)
       results = {'Average Price': price}
+      #adding in the average prices for neighborhood
+      df = pd.read_csv('/Users/amishdalal/airbnb_hackathon/neighborhood_prices_2016.csv',index_col=0)
+      df = df[(df['month']==month) & (df['bedrooms']==bedrooms)].sort_values('median_price')
+      results = [results]
+      #j=[{'test':20}]
+      j = [df.to_dict()]
+      results += j
+      #adding the listings per neighborhood
+      listings = pd.read_csv('/Users/amishdalal/airbnb_hackathon/listings_agg.csv',index_col=0)
+      listing_df = listings[(listings['month']==month) & (listings['bedrooms']==bedrooms)  &(listings['neighborhood2']==neighborhood)]
+      l = [listing_df.to_dict()]
+
+      results += l
+
       return flask.jsonify(results)
 
 @app.route('/neighborhoods', methods=['POST', 'GET'])
@@ -77,10 +95,8 @@ def neighborhoods():
         month = inputs['month'][0]
         bedrooms = inputs['bedrooms'][0]
 
-        df = pd.read_csv('/Users/amishdalal/airbnb_hackathon/neighborhood_prices_2016')
-        df = df[(df['month']==month) & (df['bedrooms']==bedrooms)].sort_values('median_price')
-        
-        return flask.jsonify(df)
+
+        return j
 
 if __name__ == '__main__':
     '''Connects to the server'''
