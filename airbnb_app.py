@@ -53,11 +53,11 @@ def result():
 
       month = inputs['month'][0]
       #print month
-      bedrooms = inputs['bedrooms'][0]
+      bedrooms = inputs['room'][0]
       #print bedrooms
-      number_of_reviews = inputs['number_of_reviews'][0]
+      number_of_reviews = inputs['reviews'][0]
       #print number_of_reviews
-      review_scores_rating = inputs['review_scores_rating'][0]
+      review_scores_rating = inputs['rating'][0]
       #print review_scores_rating
       neighborhood = inputs['neighborhood'][0]
       #print neighborhood
