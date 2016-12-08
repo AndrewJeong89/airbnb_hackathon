@@ -9,13 +9,13 @@ Based on the month and bedroom inputs, the min, max, median, and mean neighborho
 Please see the airbnb_app.py file to see how flask routing. The airbnb_pricing_model_2016.csv is the data for the algorithm, while neighborhood_prices_2016.csv is for the neighborhood average prices, and listings_agg.csv is the listings for the month,bedrooms, and neighborhood inputs.
 
 The following people collaborated on this project:
-* Tenzin Changchup
-* Nico Cucciniello
-* Amish Dalal
-* Donald Highe
-* [Andrew Jeong](https://github.com/AndrewJeong89)
-* Samuel Na
-* Janelle Rosario
+* Tenzin Changchup - Web Development
+* Nico Cucciniello - Web Development
+* Amish Dalal - Data Science
+* Donald Highe - Web Development
+* [Andrew Jeong - Data Science](https://github.com/AndrewJeong89)
+* Samuel Na - Web Development
+* Janelle Rosario - Web Development
 
 
 
