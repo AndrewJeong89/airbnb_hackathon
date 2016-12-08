@@ -11,7 +11,7 @@ from sklearn.preprocessing import LabelEncoder
 
 le = LabelEncoder()
 
-data = pd.read_csv('/Users/amishdalal/airbnb_hackathon/airbnb_model.csv',index_col=0)
+data = pd.read_csv('/Users/amishdalal/airbnb_hackathon/airbnb_pricing_model_2016.csv',index_col=0)
 X1 = data.iloc[:,:5]
 y1 = data['avg_price']
 
