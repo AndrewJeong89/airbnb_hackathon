@@ -7,13 +7,13 @@ This repo looks at airbnb listings and calendars from [insideairbnb.com](http://
 Based on the month and bedroom inputs, the min, max, median, and mean neighborhood prices are also calculated, giving the user prices for other neighborhoods. Adding in neighborhood input, the listings for all three inputs (month, bedroom, neighborhood) are shown.
 
 The following people collaborated on this project:
-Tenzin Changchup
-Nico Cucciniello
-Amish Dalal
-Donald Highe
-Andrew Jeong
-Samuel Na
-Janelle Rosario
+* Tenzin Changchup
+* Nico Cucciniello
+* Amish Dalal
+* Donald Highe
+* Andrew Jeong
+* Samuel Na
+* Janelle Rosario
 
 
 
